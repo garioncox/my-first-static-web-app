@@ -4,4 +4,16 @@
 
 <h1>Hello, world!</h1>
 
-Welcome to your new app.
+API Result: @result
+
+<button class="btn btn-primary" @onclick=click>Clicked @times</button>
+
+@code {
+    string result;
+    int times;
+    void click() => times++;
+    protected override Task OnInitializedAsync() {
+        var httpClient = new HttpClient();
+        var response = await httpclient.GetAsync("/api/message?name=foobar")
+    }
+}
