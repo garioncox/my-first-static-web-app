@@ -12,8 +12,8 @@ API Result: @result
     string result;
     int times;
     void click() => times++;
-    protected override Task OnInitializedAsync() {
+    protected async override Task OnInitializedAsync() {
         var httpClient = new HttpClient();
-        var response = await httpclient.GetAsync("/api/message?name=foobar")
+        var response = await httpClient.GetAsync("/api/message?name=foobar");
     }
 }
